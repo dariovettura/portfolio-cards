@@ -6,9 +6,11 @@ import { store } from '../store/index'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return <Provider store={store}>
-    <AnimateSharedLayout >
+    <div className="container">
+    <AnimateSharedLayout  >
   <Component {...pageProps} />
   </AnimateSharedLayout>
+  </div>
   </Provider>
 }
 

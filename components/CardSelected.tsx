@@ -66,28 +66,38 @@ export const CardSelected: React.FC<Props> = ({ id, isSelected = true, history }
       >
        
       </motion.div> */}
-      <div style={{ height: "100vh", width: "100vw", position: "fixed", backgroundColor: "rgb(0,0,0,.7)", top: 0, zIndex: 10 }}>
-        <div style={{ height: "100vh", width: "100vw", position: "fixed", backgroundColor: "rgb(0,0,0,.7)", top: 0, zIndex: 11 }} ></div>
-
+      {/* <div style={{ height: "100vh", width: "100vw", position: "fixed", backgroundColor: "rgb(0,0,0,.7)", top: 0, zIndex: 10 }}>
+        <div style={{ height: "100vh", width: "100vw", position: "fixed", backgroundColor: "rgb(0,0,0,.7)", top: 0, zIndex: 11 }} ></div> */}
+        <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0, transition: { duration: 0.15 } }}
+        transition={{ duration: 0.2, delay: 0.15 }}
+        style={{ pointerEvents: "auto" }}
+        className="overlay"
+      >
+        <Link href="/" scroll={false}>
+          <a></a>
+          </Link>
+      </motion.div>
         <div  {...handlers} className="card-content-container open">
-          <div ref={top}></div>
+          {/* <div ref={top}></div> */}
           <motion.div
             // drag="x"
             // dragConstraints={{ left: 1, right: 1 }}
             // onDragEnd={
             //   () => checkSwipeToDismiss()
             // }
-            className="card-content" layoutId={`card-container-${id}`}>
+            className="card-content" layoutId={`card-container-${item?.id}`}>
             <motion.div
               className="card-image-container"
-              layoutId={`card-image-container-${id}`}
+              layoutId={`card-image-container-${item?.id}`}
             >
-                 <Video  src={item?.acf.link}></Video>
-              {/* <img className="card-image" src={`images/${id}.jpg`} alt="" /> */}
+              <img className="card-image" src={item?.acf?.anteprima} alt="" />
             </motion.div>
             <motion.div
               className="title-container"
-              layoutId={`title-container-${id}`}
+              layoutId={`title-container-${item?.id}`}
             >
               <span className="category"></span>
               <h2></h2>
@@ -103,9 +113,9 @@ export const CardSelected: React.FC<Props> = ({ id, isSelected = true, history }
               </Link>
             </motion.div>
           </motion.div>
-          <div ref={bottom}></div>
+          {/* <div ref={bottom}></div> */}
         </div>
-      </div>
+      {/* </div> */}
 
     </>
   );

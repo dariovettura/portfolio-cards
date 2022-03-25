@@ -26,33 +26,30 @@ const Card: React.FC<Props> = ({ id, title, category, theme, isSelected ,item}) 
 
     
     return (
-        <li className={`card ${theme}`}>
+        <li >
+        <div className="card-content-container">
+          <motion.div className="card-content" layoutId={`card-container-${item?.id}`}>
+            <motion.div
+              className="card-image-container"
+              layoutId={`card-image-container-${item?.id}`}
+            >
+              <img className="card-image" src={item?.acf?.anteprima} alt="" />
+            </motion.div>
+            <motion.div
+              className="title-container"
+              layoutId={`title-container-${item?.id}`}
+            >
+              <span className="category">{category}</span>
+              <h2>{title}</h2>
+            </motion.div>
+          </motion.div>
+        </div>
+        <Link href={`/${item?.id}`}   scroll={false} >
+            <a className={`card-open-link`} ></a>
+            </Link>
+      
+      </li>
 
-            <div className="card-content-container">
-                <motion.div className="card-content" layoutId={`card-container-${item?.id}`}>
-                    <motion.div
-                        className="card-image-container"
-                        layoutId={`card-image-container-${item?.id}`}
-                    >
-                          <Video  src={item?.acf.link}></Video>
-                        {/* <img className="card-image" src={`images/${id}.jpg`} alt="" /> */}
-                    </motion.div>
-                    <motion.div
-                        className="title-container"
-                        layoutId={`title-container-${item?.id}`}
-                    >
-                        <span className="category"></span>
-                        <h2>{title}</h2>
-                        <Link href={`/${item?.id}`} scroll={false} >
-                            <a >apri</a>
-                        </Link>
-                    </motion.div>
-                </motion.div>
-            </div>
-
-
-
-        </li>
     );
 }
 

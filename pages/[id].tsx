@@ -9,6 +9,24 @@ const Post = () => {
   const router = useRouter()
   const { id } = router.query
 
+  async function navigate() {
+    router.push({
+      pathname: "/",
+
+    }, undefined, { scroll: false });
+  }
+
+  React.useEffect(() => {
+   
+
+    
+    window.onpopstate = () => {
+
+
+      navigate()
+    };
+  }, [])
+
   React.useEffect(()=>{
     const contenuto = document.querySelector("body");
     contenuto?.setAttribute("class", "overflow-hidden");

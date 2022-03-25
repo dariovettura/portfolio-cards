@@ -38,7 +38,7 @@ export async function getStaticProps(): Promise<GetStaticPropsResult<Props>>  {
  
 
   const url =
-  "https://www.dariovettura.com/dance/wp-json/wp/v2/posts";
+  "https://www.dariovettura.com/postfolio/wp-json/wp/v2/posts?_embed&per_page=100";
 
   //const result = await Axios.get(url);
   //const menu =  result.data
