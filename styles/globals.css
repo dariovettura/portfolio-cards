@@ -116,13 +116,15 @@ li {
 }
 
 .card-content-container.open {
+  max-width: 700px;
   top: 0;
-  left: 0;
+  left: 50%;
   right: 0;
   position: fixed;
-  z-index: 14;
+  z-index: 1;
   overflow: scroll;
   padding: 40px 0;
+  transform: translateX(-50%);
 }
 
 .card-content {
