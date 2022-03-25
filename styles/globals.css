@@ -159,7 +159,7 @@ li {
     width: 100%;
     top: 0;
     z-index: 1;
-    background: rgb(0,0,0,0.19);
+    background: linear-gradient(329deg, rgba(0,0,0,0) 64%, rgba(0,0,0,1) 90%, rgba(0,0,0,1) 0%);
 }
 .card-image-container {
   position: absolute;
