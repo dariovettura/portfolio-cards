@@ -94,6 +94,7 @@ export const CardSelected: React.FC<Props> = ({ id, isSelected = true, history }
               layoutId={`card-image-container-${item?.id}`}
             >
               <img className="card-image" src={item?.acf?.anteprima} alt="" />
+              <div className="img-overlay"></div>
             </motion.div>
             <motion.div
               className="title-container"

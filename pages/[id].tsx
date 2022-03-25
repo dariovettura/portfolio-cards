@@ -20,11 +20,11 @@ const Post = () => {
    
 
     
-    window.onpopstate = () => {
+    // window.onpopstate = () => {
 
 
-      navigate()
-    };
+    //   navigate()
+    // };
   }, [])
 
   React.useEffect(()=>{

@@ -121,7 +121,7 @@ li {
   left: 50%;
   right: 0;
   position: fixed;
-  z-index: 1;
+  z-index: 5;
   overflow: scroll;
   padding: 40px 0;
   transform: translateX(-50%);
@@ -151,8 +151,16 @@ li {
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 3;
 }
-
+.img-overlay{
+  position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+    background: rgb(0,0,0,0.19);
+}
 .card-image-container {
   position: absolute;
   top: 0;
@@ -180,6 +188,7 @@ li {
   top: 15px;
   left: 15px;
   max-width: 300px;
+  z-index: 2
 }
 
 .open .title-container {
@@ -200,7 +209,7 @@ h2 {
 }
 .title{text-shadow: 2px 2px black;}
 .overlay {
-  z-index: 1;
+  z-index: 4;
   position: fixed;
   background: rgba(0, 0, 0, 0.8);
   will-change: opacity;

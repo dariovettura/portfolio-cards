@@ -51,6 +51,7 @@ const Card: React.FC<Props> = ({ id, title, category, theme, isSelected ,item}) 
         <Link href={`/${item?.id}`}   scroll={false} >
             <a className={`card-open-link`} ></a>
             </Link>
+            <div className="img-overlay"></div>
       
       </li>
     );
