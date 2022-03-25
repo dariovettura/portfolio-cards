@@ -56,7 +56,7 @@ const Card: React.FC<Props> = ({ id, title, category, theme, isSelected ,item}) 
     );
 }
 
- const List: React.FC<Props> = ({video}) => {
+ const Home: React.FC<Props> = ({video}) => {
     const {data} =useAppSelector(cartSelector)
   console.log(data)
 
@@ -77,4 +77,4 @@ const Card: React.FC<Props> = ({ id, title, category, theme, isSelected ,item}) 
     );
 }
 
-  export default List;
+  export default Home;
