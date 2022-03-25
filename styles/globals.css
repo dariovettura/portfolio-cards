@@ -262,7 +262,10 @@ p {
     flex: 1 0 100%;
     max-width: 100%;
   }
-
+  .container {
+  
+    padding: 45px 10px;
+  }
   /* .card-content-container.open {
     padding: 0;
   } */
