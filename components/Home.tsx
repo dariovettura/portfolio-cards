@@ -34,6 +34,7 @@ const Card: React.FC<Props> = ({ id, title, category, theme, isSelected ,item}) 
               layoutId={`card-image-container-${item?.id}`}
             >
               <img className="card-image" src={item?.acf?.anteprima} alt="" />
+              <div className="img-overlay"></div>
             </motion.div>
             <motion.div
               className="title-container"
@@ -51,7 +52,7 @@ const Card: React.FC<Props> = ({ id, title, category, theme, isSelected ,item}) 
         <Link href={`/${item?.id}`}   scroll={false} >
             <a className={`card-open-link`} ></a>
             </Link>
-            <div className="img-overlay"></div>
+        
       
       </li>
     );
