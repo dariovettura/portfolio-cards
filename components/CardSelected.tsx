@@ -99,15 +99,15 @@ export const CardSelected: React.FC<Props> = ({ id, isSelected = true, history }
               className="title-container"
               layoutId={`title-container-${item?.id}`}
             >
-              <span className="category"></span>
-              <h2></h2>
+              <span className="category">
+              {item?._embedded["wp:term"][0][0].name}
+                  </span>
+           
+              <h2 className="title">{item?.title.rendered}</h2>
             </motion.div>
 
             <motion.div className="content-container" animate>
-              <p style={{ fontSize: "100px" }}>  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias odit eum beatae eius laboriosam, numquam repellat aspernatur nisi omnis provident inventore nobis unde
-                quibusdam dolorem aliquid</p>
-              cupiditate
-              fugiat in. Eaque?
+            <div className='post-content-container'   dangerouslySetInnerHTML={{__html: item?.content.rendered }} />
               <Link href="/" scroll={false} >
                 <a >back</a>
               </Link>

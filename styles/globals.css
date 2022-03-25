@@ -158,15 +158,23 @@ li {
   top: 0;
   left: 0;
   overflow: hidden;
-  height: 420px;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
+}
+.card-image{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .open .card-image-container,
 .open .title-container {
+
   z-index: 1;
 }
-
+.open .card-image-container{
+  height: 50%;
+}
 .title-container {
   position: absolute;
   top: 15px;
@@ -185,11 +193,12 @@ h2 {
 }
 
 .category {
+  text-shadow: 0.6px 0.6px black;
   color: #fff;
   font-size: 14px;
   text-transform: uppercase;
 }
-
+.title{text-shadow: 2px 2px black;}
 .overlay {
   z-index: 1;
   position: fixed;
@@ -254,7 +263,7 @@ p {
     max-width: 100%;
   }
 
-  .card-content-container.open {
+  /* .card-content-container.open {
     padding: 0;
-  }
+  } */
 }

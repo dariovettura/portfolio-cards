@@ -39,8 +39,12 @@ const Card: React.FC<Props> = ({ id, title, category, theme, isSelected ,item}) 
               className="title-container"
               layoutId={`title-container-${item?.id}`}
             >
-              <span className="category">{category}</span>
-              <h2>{title}</h2>
+              <span className="category">
+              {item?._embedded["wp:term"][0][0].name}
+                  </span>
+           
+              <h2 className="title">{item?.title.rendered}</h2>
+                
             </motion.div>
           </motion.div>
         </div>
