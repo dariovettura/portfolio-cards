@@ -54,6 +54,20 @@ export const CardSelected: React.FC<Props> = ({ id, isSelected = true, history }
     // trackMouse: true
   });
 
+
+  async function navigate() {
+    router.push({
+      pathname: "/",
+
+    }, undefined, { scroll: false });
+  }
+
+  React.useEffect(() => {
+   if(!item)
+      navigate()
+   
+  }, [])
+
   return (
     <>
       {/* <motion.div
