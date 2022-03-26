@@ -121,12 +121,9 @@ export const CardSelected: React.FC<Props> = ({ id, isSelected = true, history }
               <h2 className="title">{item?.title.rendered}</h2>
             </motion.div>
 
-            <motion.div className="content-container" animate>
-            <div className='post-content-container'   dangerouslySetInnerHTML={{__html: item?.content.rendered }} />
-              <Link href="/" scroll={false} >
-                <a >back</a>
-              </Link>
-            </motion.div>
+            <motion.div className="content-container" animate  dangerouslySetInnerHTML={{__html: item?.content.rendered }}/>
+         
+        
           </motion.div>
           {/* <div ref={bottom}></div> */}
         </div>

@@ -45,7 +45,7 @@ h1 {
   color: white;
   margin: 6px 0 12px;
 }
-
+a{color:#ff8800}
 .date {
   color: var(--secondary);
   font-size: 14px;
@@ -139,7 +139,7 @@ li {
 }
 
 .open .card-content {
-  height: auto;
+  height: 85vh;
   max-width: 700px;
   overflow: hidden;
   
@@ -181,7 +181,8 @@ li {
   z-index: 1;
 }
 .open .card-image-container{
-  height: 50%;
+  position: relative;
+  height: 40%;
 }
 .title-container {
   position: absolute;
@@ -192,8 +193,8 @@ li {
 }
 
 .open .title-container {
-  top: 30px;
-  left: 30px;
+  top: 15px;
+  left: 15px;
 }
 
 h2 {
@@ -233,14 +234,16 @@ h2 {
 }
 
 .content-container {
-  padding: 460px 35px 35px 35px;
+ height: 60%;
+ overflow-y: auto;
+ padding-left: 15px;
   max-width: 700px;
   width: 90vw;
 }
 
 p {
-  color: #9d9ca1;
-  font-size: 20px;
+  color: #fff;
+  font-size: 16px;
   line-height: 28px;
 }
 
