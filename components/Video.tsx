@@ -5,14 +5,14 @@ import ReactPlayer from "react-player";
 
 interface VideoProps {
   src?: string,
-  muted?:boolean
+  muted?: boolean
 
 }
 
-const Video: React.FC<VideoProps> = ({ src ,muted}) => {
+const Video: React.FC<VideoProps> = ({ src, muted }) => {
   const videoRef = React.useRef<any>(null);
   // const [inView, setInView] = React.useState(false);
- 
+
 
 
   const [ref, inView] = useInView({
@@ -34,7 +34,7 @@ const Video: React.FC<VideoProps> = ({ src ,muted}) => {
 
 
     <div ref={ref} className="video">
-     
+
       <ReactPlayer
         config={{ youtube: { playerVars: { disablekb: 1 } } }}
 

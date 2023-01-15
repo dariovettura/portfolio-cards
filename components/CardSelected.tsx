@@ -22,7 +22,7 @@ interface Props {
 
 
 export const CardSelected: React.FC<Props> = ({ id, isSelected = true, history }) => {
-  const {data} =useAppSelector(cartSelector)
+  const { data } = useAppSelector(cartSelector)
   // const [item,setItem] = React.useState(data.find(item => item.id === parseInt(id)))
   const item = data.find(item => item.id === parseInt(id));
   const [bottom, inViewBottom] = useInView({
@@ -31,29 +31,31 @@ export const CardSelected: React.FC<Props> = ({ id, isSelected = true, history }
   const [top, inViewTop] = useInView({
     threshold: 1,
   })
-  console.log(item,data,id)
+  console.log(item, data, id)
 
   const router = useRouter();
 
   function swipeUpTodismiss() {
-    if(inViewBottom ){
+    if (inViewBottom) {
       console.log("inview")
-    router.push({ pathname: "/" }, undefined, { scroll: false })}
+      router.push({ pathname: "/" }, undefined, { scroll: false })
+    }
   }
   function swipeBottomTodismiss() {
-    if(inViewTop ){
+    if (inViewTop) {
       console.log("inview")
-    router.push({ pathname: "/" }, undefined, { scroll: false })}
+      router.push({ pathname: "/" }, undefined, { scroll: false })
+    }
   }
- 
+
   const handlers = useSwipeable({
     onSwipedUp: () => swipeUpTodismiss(),
-    onSwipedDown:() => swipeBottomTodismiss(),
-   
+    onSwipedDown: () => swipeBottomTodismiss(),
+
     // preventDefaultTouchmoveEvent: true,
     // trackMouse: true
   });
-  const checkSwipeToDismiss =()=>{
+  const checkSwipeToDismiss = () => {
     router.push({ pathname: "/" }, undefined, { scroll: false })
   }
 
@@ -65,9 +67,9 @@ export const CardSelected: React.FC<Props> = ({ id, isSelected = true, history }
   }
 
   React.useEffect(() => {
-   if(!item)
+    if (!item)
       navigate()
-   
+
   }, [])
 
   return (
@@ -84,7 +86,7 @@ export const CardSelected: React.FC<Props> = ({ id, isSelected = true, history }
       </motion.div> */}
       {/* <div style={{ height: "100vh", width: "100vw", position: "fixed", backgroundColor: "rgb(0,0,0,.7)", top: 0, zIndex: 10 }}>
         <div style={{ height: "100vh", width: "100vw", position: "fixed", backgroundColor: "rgb(0,0,0,.7)", top: 0, zIndex: 11 }} ></div> */}
-        <motion.div
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0, transition: { duration: 0.15 } }}
@@ -94,41 +96,41 @@ export const CardSelected: React.FC<Props> = ({ id, isSelected = true, history }
       >
         <Link href="/" scroll={false}>
           <a></a>
-          </Link>
+        </Link>
       </motion.div>
-        <div  {...handlers} className="card-content-container open">
-          {/* <div ref={top}></div> */}
+      <div  {...handlers} className="card-content-container open">
+        {/* <div ref={top}></div> */}
+        <motion.div
+          drag="y"
+          dragConstraints={{ top: 10, bottom: 10 }}
+          onDragEnd={
+            () => checkSwipeToDismiss()
+          }
+          className="card-content" layoutId={`card-container-${item?.id}`}>
           <motion.div
-            drag="y"
-            dragConstraints={{ top: 10, bottom: 10 }}
-            onDragEnd={
-              () => checkSwipeToDismiss()
-            }
-            className="card-content" layoutId={`card-container-${item?.id}`}>
-            <motion.div
-              className="card-image-container"
-              layoutId={`card-image-container-${item?.id}`}
-            >
-              <img className="card-image" src={item?.acf?.anteprima} alt="" />
-              <div className="img-overlay"></div>
-            </motion.div>
-            <motion.div
-              className="title-container"
-              layoutId={`title-container-${item?.id}`}
-            >
-              <span className="category">
-              {item?._embedded["wp:term"][0][0].name}
-                  </span>
-           
-              <h2 className="title">{item?.title.rendered}</h2>
-            </motion.div>
-
-            <motion.div className="content-container" animate  dangerouslySetInnerHTML={{__html: item?.content.rendered }}/>
-         
-        
+            className="card-image-container"
+            layoutId={`card-image-container-${item?.id}`}
+          >
+            <img className="card-image" src={item?.acf?.anteprima} alt="" />
+            <div className="img-overlay"></div>
           </motion.div>
-          {/* <div ref={bottom}></div> */}
-        </div>
+          <motion.div
+            className="title-container"
+            layoutId={`title-container-${item?.id}`}
+          >
+            <span className="category">
+              {item?._embedded["wp:term"][0][0].name}
+            </span>
+
+            <h2 className="title">{item?.title.rendered}</h2>
+          </motion.div>
+
+          <motion.div className="content-container" animate dangerouslySetInnerHTML={{ __html: item?.content.rendered }} />
+
+
+        </motion.div>
+        {/* <div ref={bottom}></div> */}
+      </div>
       {/* </div> */}
 
     </>
