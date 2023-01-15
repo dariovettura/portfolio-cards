@@ -3,9 +3,7 @@ import { motion, useMotionValue } from "framer-motion";
 import { useRouter } from 'next/router';
 import { useSwipeable } from 'react-swipeable';
 import { InView, useInView } from "react-intersection-observer";
-
 import Link from 'next/link'
-import { items } from "./Data";
 import { useScrollConstraints } from "../utils/use-scroll-constraints";
 import { useWheelScroll } from "../utils/use-wheel-scroll";
 import { useAppSelector } from "../store/hooks";
