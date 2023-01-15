@@ -1,5 +1,4 @@
 import React from "react";
-import { items } from "./Data";
 import Link from 'next/link'
 import { motion } from "framer-motion";
 import { GetStaticPropsResult } from "next";
